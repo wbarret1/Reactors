@@ -7,3 +7,4 @@ C:\Users\WBARRETT\Source\Repos\Reactors\Reactors\bin\Debug\Reactors.exe
 C:\Users\WBARRETT\Source\Repos\Reactors\Reactors\bin\Debug\Reactors.pdb
 C:\Users\WBARRETT\Source\Repos\Reactors\Reactors\obj\Debug\Reactors.exe
 C:\Users\WBARRETT\Source\Repos\Reactors\Reactors\obj\Debug\Reactors.pdb
+C:\Users\WBARRETT\Source\Repos\Reactors\Reactors\obj\Debug\Reactors.Form1.resources

@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace Reactors
 {
-    class Chemical
+    public class Chemical
     {
-        public Chemical()
+        public Chemical(string name, string casNo, double MolWt, double heatOfFormation, double entropyOfFormation)
         {
-
+            Name = name;
+            CasNo = casNo;
+            MolecularWeight = MolWt;
+            HeatOfFormation = heatOfFormation;
+            EntropyOfFormation = entropyOfFormation;
         }
         public string Name { get; set; }
 
@@ -24,6 +28,11 @@ namespace Reactors
             }
             set
             {
+                if (string.IsNullOrEmpty(value))
+                {
+                    m_CasNo = string.Empty;
+                    return;
+                }
                 string[] numbers = value.Split('-');
                 if (numbers.Length != 3)
                 {
@@ -33,8 +42,10 @@ namespace Reactors
             }
         }
         public double MolecularWeight { get; set; }
-        public double heatOfFormation { get; set; }
-        public double entropyOfFormation { get; set; }
+        public double HeatOfFormation { get; set; }
+        public double EntropyOfFormation { get; set; }
 
     }
+
+
 }
