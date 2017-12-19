@@ -15,6 +15,7 @@ namespace Reactors
         Horizontal
     }
 
+    [Serializable]
     public abstract class Vessel
     {
 
@@ -24,7 +25,7 @@ namespace Reactors
         /// <param name="volume">Volume of the tank, in ft^3.</param>
         /// <param name="operatingPressure">Operating Pressure, psig.</param>
         /// <param name="aspectRatio">Length/diameter of the tank.</param>
-        public Vessel(double volume, double operatingPressure, double aspectRatio, VesselOrientation orientation)
+        public Vessel(string name, double volume, double operatingPressure, double aspectRatio, VesselOrientation orientation)
         {
             m_Volume = volume;
             m_OperatingPressure = operatingPressure;
@@ -33,10 +34,23 @@ namespace Reactors
             m_Diameter = Math.Pow((4 * m_Volume) / (m_AspectRatio * Math.PI), (1 / 3));
         }
 
+        string m_Name;
         double m_Volume;
         double m_OperatingPressure;
         double m_AspectRatio;
         double m_Diameter;
+
+        public string Name
+        {
+            get
+            {
+                return m_Name;
+            }
+            set
+            {
+                m_Name = value;
+            }
+        }
 
         /// <summary>
         /// Tank volume in ft^3.

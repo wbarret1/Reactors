@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 namespace Reactors
 {
+    //internal class ChemicalConverter : System.ComponentModel.ExpandableObjectConverter
+    //{
+    //    public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context,
+    //                         System.Globalization.CultureInfo culture,
+    //                         object value, Type destType)
+    //    {
+    //        if (destType == typeof(string) && value is Chemical)
+    //        {
+    //            Chemical chem = (Chemical)value;
+    //            return chem.Name;
+    //        }
+    //        return base.ConvertTo(context, culture, value, destType);
+    //    }
+    //}
+
+    [Serializable]
+    //[System.ComponentModel.TypeConverter(typeof(ChemicalConverter))]
     public class Chemical
     {
         public Chemical(string name, string casNo, double MolWt, double heatOfFormation, double entropyOfFormation)

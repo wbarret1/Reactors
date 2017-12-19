@@ -6,27 +6,9 @@ using System.Threading.Tasks;
 
 namespace Reactors
 {
-    internal class ReactantConverter : System.ComponentModel.ExpandableObjectConverter
+    public class ReactionProduct : ReactionParticipant
     {
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context,
-                             System.Globalization.CultureInfo culture,
-                             object value, Type destType)
-        {
-            if (destType == typeof(string) && value is Reactant)
-            {
-                Reactant react = (Reactant)value;
-                return react.Chemical.Name;
-            }
-            return base.ConvertTo(context, culture, value, destType);
-        }
-    }
-
-    [Serializable]
-    [System.ComponentModel.TypeConverter(typeof(ReactantConverter))]
-    public class Reactant : ReactionParticipant
-    {
-
-        public Reactant(Chemical chemical, double stoichiomety): base(chemical)
+        public ReactionProduct(Chemical chemical, double stoichiomety) : base(chemical)
         {
             m_StoichiometricCoefficient = stoichiomety;
         }
